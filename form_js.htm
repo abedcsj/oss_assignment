@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checkout Form Example">
+    <meta name="author" content="Your Name">
+    <title>Checkout Form (With JS)</title>
+</head>
+<body>
+
+<div>
+    <h2>Checkout Form</h2>
+    <p>Fill in your details below to complete the purchase.</p>
+
+    <form id="checkout-form">
+        <div>
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" required>
+        </div>
+
+        <div>
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" rows="3"></textarea>
+        </div>
+
+        <div>
+            <label for="country">Country</label>
+            <select id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="deliveryDate">Preferred Delivery Date</label>
+            <input type="date" id="deliveryDate" required>
+        </div>
+
+        <h4>Payment</h4>
+        <div>
+            <input id="credit" name="paymentMethod" type="radio" checked required>
+            <label for="credit">Credit card</label>
+        </div>
+        <div>
+            <input id="debit" name="paymentMethod" type="radio" required>
+            <label for="debit">Debit card</label>
+        </div>
+        <div>
+            <input id="paypal" name="paymentMethod" type="radio" required>
+            <label for="paypal">PayPal</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="save-info">
+            <label for="save-info">Save this information for next time</label>
+        </div>
+
+        <button type="submit">Continue to checkout</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('checkout-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const firstName = document.getElementById('firstName').value;
+        if (!firstName) {
+            alert('Please fill in your first name.');
+        } else {
+            alert('Form submitted successfully!');
+        }
+    });
+</script>
+</body>
+</html>

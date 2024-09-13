@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checkout Form Example">
+    <meta name="author" content="Your Name">
+    <title>Checkout Form (No Style)</title>
+</head>
+<body>
+
+<div>
+    <h2>Checkout Form</h2>
+    <p>Fill in your details below to complete the purchase.</p>
+
+    <h4>Billing Address</h4>
+    <form>
+        <!-- Text input fields -->
+        <div>
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" required>
+        </div>
+
+        <div>
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" required>
+        </div>
+
+        <!-- Textarea input -->
+        <div>
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" rows="3"></textarea>
+        </div>
+
+        <!-- Select input with optgroup -->
+        <div>
+            <label for="country">Country</label>
+            <select id="country" required>
+                <option value="">Choose...</option>
+                <optgroup label="North America">
+                    <option>United States</option>
+                    <option>Canada</option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option>United Kingdom</option>
+                    <option>Germany</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Date input -->
+        <div>
+            <label for="deliveryDate">Preferred Delivery Date</label>
+            <input type="date" id="deliveryDate" required>
+        </div>
+
+        <!-- Datalist input -->
+        <div>
+            <label for="city">City</label>
+            <input list="cityList" id="city" name="city" placeholder="Choose your city">
+            <datalist id="cityList">
+                <option value="New York">
+                <option value="Los Angeles">
+                <option value="Chicago">
+                <option value="Houston">
+            </datalist>
+        </div>
+
+        <!-- Fieldset with legend -->
+        <fieldset>
+            <legend>Choose your favorite color</legend>
+            <div>
+                <label for="color">Favorite color</label>
+                <input type="color" id="color" name="favoriteColor">
+            </div>
+        </fieldset>
+
+        <h4>Payment</h4>
+        <div>
+            <input id="credit" name="paymentMethod" type="radio" checked required>
+            <label for="credit">Credit card</label>
+        </div>
+        <div>
+            <input id="debit" name="paymentMethod" type="radio" required>
+            <label for="debit">Debit card</label>
+        </div>
+        <div>
+            <input id="paypal" name="paymentMethod" type="radio" required>
+            <label for="paypal">PayPal</label>
+        </div>
+
+        <!-- Checkbox -->
+        <div>
+            <input type="checkbox" id="save-info">
+            <label for="save-info">Save this information for next time</label>
+        </div>
+
+        <button type="submit">Continue to checkout</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+<!-- text, radio, checkbox, select, date, textarea-->
+<!-- fieldset, legend, optgroup, color, **datalist** -->

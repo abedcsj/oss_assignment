@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checkout Form Example">
+    <meta name="author" content="Your Name">
+    <title>Checkout Form (With Style and List)</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        ul {
+            list-style-type: disc;
+            margin-top: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Checkout Form</h2>
+            <p class="lead">Fill in your details below to complete the purchase.</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-12">
+                <h4 class="mb-3">Billing Address</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                            <div class="invalid-feedback">Valid first name is required.</div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="additionalInfo" class="form-label">Additional Information</label>
+                            <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-select" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a valid country.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="deliveryDate" class="form-label">Preferred Delivery Date</label>
+                            <input type="date" class="form-control" id="deliveryDate" required>
+                            <div class="invalid-feedback">Please provide a valid date.</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="paypal">PayPal</label>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <label class="form-check-label" for="save-info">Save this information for next time</label>
+                    </div>
+
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                </form>
+
+                <!-- List Section -->
+                <h4 class="my-4">Your Entries</h4>
+                <input type="text" class="form-control" id="inputField" placeholder="Enter something" />
+                <button class="btn btn-primary my-3" onclick="addToList()">Add to List</button>
+                <ul id="itemList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2024 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+
+<!-- JavaScript to handle the list -->
+<script>
+    function addToList() {
+        const inputField = document.getElementById('inputField');
+        const inputValue = inputField.value.trim();
+
+        if (inputValue !== '') {
+            const itemList = document.getElementById('itemList');
+            const li = document.createElement('li');
+            li.textContent = inputValue;
+            itemList.appendChild(li);
+            inputField.value = ''; // Clear input field after adding
+        } else {
+            alert('Please enter a value!');
+        }
+    }
+</script>
+
+<!-- Bootstrap JavaScript bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
